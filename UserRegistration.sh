@@ -38,9 +38,15 @@ fi
 
 read -p "Enter Password:" password
 password_pat1="^.{8,}$"
+password_pat2="[[:upper:]]{1,}"
 if [[ $password =~ $password_pat1 ]]
 then
-        echo "Password is valid"
+	if [[ $password =~ $password_pat2 ]]
+	then
+        	echo "Password is valid"
+	else
+		echo "Password should  have atleast 1 UpperCase"
+	fi
 else
         echo "Password should have minimum 8 Characters"
 fi
