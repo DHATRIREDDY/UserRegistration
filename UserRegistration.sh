@@ -31,8 +31,8 @@ read -p "Enter Mobile Number:" number
 mobilepat="^[0-9]{1,}[ ][0-9]{10}$"
 if [[ $number =~ $mobilepat ]]
 then
-        echo "Email is valid"
+        echo "Mobile Number is valid"
 else
-        echo "Email is invalid"
+        echo "Mobile Number is invalid"
 fi
 
