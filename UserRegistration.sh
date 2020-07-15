@@ -18,3 +18,11 @@ else
         echo "LastName is invalid"
 fi
 
+read -p "Enter Email Address :" email
+emailpat="^[A-Za-z]{1}[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}$"
+if [[ $email =~ $emailpat ]]
+then
+	echo "Email is valid"
+else
+	echo "Email is invalid"
+fi
