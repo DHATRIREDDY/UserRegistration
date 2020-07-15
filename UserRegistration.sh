@@ -31,8 +31,17 @@ read -p "Enter Mobile Number:" number
 mobilepat="^[0-9]{1,}[ ][0-9]{10}$"
 if [[ $number =~ $mobilepat ]]
 then
-        echo "Email is valid"
+        echo "Mobile Number is valid"
 else
-        echo "Email is invalid"
+        echo "Mobile Number is invalid"
+fi
+
+read -p "Enter Password:" password
+password_pat1="^.{8,}$"
+if [[ $password =~ $password_pat1 ]]
+then
+        echo "Password is valid"
+else
+        echo "Password should have minimum 8 Characters"
 fi
 
