@@ -40,13 +40,19 @@ read -p "Enter Password:" password
 password_pat1="^.{8,}$"
 password_pat2="[[:upper:]]{1,}"
 password_pat3="[0-9]{1,}"
+password_pat4="([a-zA-Z0-9]*)[@!#%<>()/?&*]{1}([a-zA-Z0-9]*)$"
 if [[ $password =~ $password_pat1 ]]
 then
 	if [[ $password =~ $password_pat2 ]]
 	then
 		if [[ $password =~ $password_pat3 ]]
 		then
-        		echo "Password is valid"
+			if [[ $password =~ $password_pat4 ]]
+        		then
+				echo "Password is valid"
+			else
+				echo "Password must have atleast 1 special character"
+			fi
 		else
 			echo "Password should  have atleast 1 numeric number"
 		fi
@@ -56,4 +62,3 @@ then
 else
         echo "Password should have minimum 8 Characters"
 fi
-
